@@ -228,6 +228,149 @@ footer {
   display: block;
   margin-bottom: 8px;
 }
+
+/* words.htmlの写真ギャラリー用：神秘的なイメージ */
+.memory-gallery {
+  background: linear-gradient(135deg, #3a3d5c 0%, #6e7bb7 100%);
+  padding: 36px 0 36px 0;
+  border-radius: 32px;
+  box-shadow: 0 8px 48px rgba(60,70,130,0.18);
+  position: relative;
+  overflow: hidden;
+}
+.memory-gallery img {
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(60,70,130,0.28), 0 0 32px 8px rgba(120,140,220,0.12);
+  filter: brightness(0.92) saturate(1.2) drop-shadow(0 0 16px #bfcbe6);
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+}
+.memory-gallery img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 16px 64px rgba(60,70,130,0.32), 0 0 48px 12px rgba(120,140,220,0.18);
+  filter: brightness(1.05) saturate(1.4) drop-shadow(0 0 24px #bfcbe6);
+}
+.memory-gallery::before {
+  content: "";
+  position: absolute;
+  top: -40px; left: -40px; right: -40px; bottom: -40px;
+  background: radial-gradient(circle, rgba(120,140,220,0.18) 0%, rgba(60,70,130,0.08) 100%);
+  z-index: 0;
+}
+.memory-gallery {
+  z-index: 1;
+}
+
+/* contact.html専用：連絡先ページをかっこよく装飾 */
+.contact-container {
+  max-width: 700px;
+  margin: 48px auto 32px auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(99,102,241,0.13);
+  padding: 40px 32px 32px 32px;
+}
+.contact-container h2 {
+  color: #6366f1;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  letter-spacing: 0.08em;
+}
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+  margin-top: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid #bfcbe6;
+  background: #f8fafc;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.07);
+  transition: border 0.2s;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #6366f1;
+  outline: none;
+}
+.contact-form button {
+  background: linear-gradient(90deg, #6366f1 0%, #4e7ac7 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 32px;
+  margin-top: 12px;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.13);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.contact-form button:hover {
+  background: linear-gradient(90deg, #4e7ac7 0%, #6366f1 100%);
+  transform: scale(1.04);
+}
+.contact-methods {
+  margin-top: 40px;
+  background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(99,102,241,0.09);
+  padding: 24px 18px;
+}
+.contact-methods h2 {
+  color: #475569;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+.contact-methods ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-methods li {
+  font-size: 1.15rem;
+  color: #34495e;
+  margin-bottom: 10px;
+  padding-left: 0.5em;
+  position: relative;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+.contact-methods li::before {
+  content: "📱";
+  position: absolute;
+  left: -1.5em;
+  color: #6366f1;
+  font-size: 1.1em;
+}
+
+/* 文字を中央揃えにするスタイルを追加 */
+body, header, main, section, footer, nav, h1, h2, h3, p, ul, li, form, label {
+  text-align: center;
+}
+/* フォームの入力欄は中央揃えのまま横幅を維持 */
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  margin: 0 auto 12px auto;
+}
+/* ul/liのインデントをリセット */
+ul {
+  padding-left: 0;
+}
+li {
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
 @media (max-width: 900px) {
   .profile {
     flex-direction: column;
@@ -254,5 +397,9 @@ footer {
     width: 70vw;
     max-width: 220px;
     height: auto;
+  }
+  .contact-container {
+    padding: 18px 8px 18px 8px;
+    border-radius: 14px;
   }
 }
